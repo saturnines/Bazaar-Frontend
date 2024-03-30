@@ -21,7 +21,7 @@ let allAvailableItems = [];
 
 //Calls the first backend api, to get a list of possible items (An error should never happen)
 function fetchAllItems() {
-    fetch('https://34.68.195.193:8080/dyn_search_list') // Google Cloud IP CHANGES EVERY RS
+    fetch('https://api.kevinsapi.net/dyn_search_list') // Google Cloud IP CHANGES EVERY RS
         .then(response => response.json())
         .then(data => {
 
@@ -60,7 +60,7 @@ resultBox.addEventListener('click', function(e) {
 
 //Calls the api to get the searched item then generates html with various info
 async function fetchItemDetails(itemName) {
-    const response = await fetch(`https://34.68.195.193:8080/items/?search_term=${itemName}`);
+    const response = await fetch(`https://api.kevinsapi.net/items/?search_term=${itemName}`);
     const itemDetails = await response.json();
 
 
